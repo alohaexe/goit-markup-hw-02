@@ -1,37 +1,262 @@
-body {
-  background: rgb(221, 139, 15);
-  width: 1600px;
-  margin: auto;
-}
+/* Подключение локальных шрифтов */
 
-.logo-main,
-.logo-footer {
-  font-family: Raleway;
+/* roboto-regular - latin_cyrillic */
+@font-face {
+  font-family: "Roboto";
   font-style: normal;
-  font-weight: bold;
-  font-size: 26px;
-  line-height: 31px;
+  font-weight: 400;
+  src: local("Roboto"), local("Roboto-Regular"),
+    url("../fonts/roboto-v20-latin_cyrillic-regular.woff2") format("woff2"),
+    /* Super Modern Browsers */
+      url("../fonts/roboto-v20-latin_cyrillic-regular.woff") format("woff"),
+    /* Modern Browsers */ url("../fonts/roboto-v20-latin_cyrillic-regular.ttf")
+      format("truetype"); /* Safari, Android, iOS */
+}
+/* roboto-500 - latin_cyrillic */
+@font-face {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 500;
+  src: local("Roboto Medium"), local("Roboto-Medium"),
+    url("../fonts/roboto-v20-latin_cyrillic-500.woff2") format("woff2"),
+    /* Super Modern Browsers */
+      url("../fonts/roboto-v20-latin_cyrillic-500.woff") format("woff"),
+    /* Modern Browsers */ url("../fonts/roboto-v20-latin_cyrillic-500.ttf")
+      format("truetype"); /* Safari, Android, iOS */
+}
+/* roboto-700 - latin_cyrillic */
+@font-face {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 700;
+  src: local("Roboto Bold"), local("Roboto-Bold"),
+    url("../fonts/roboto-v20-latin_cyrillic-700.woff2") format("woff2"),
+    /* Super Modern Browsers */
+      url("../fonts/roboto-v20-latin_cyrillic-700.woff") format("woff"),
+    /* Modern Browsers */ url("../fonts/roboto-v20-latin_cyrillic-700.ttf")
+      format("truetype"); /* Safari, Android, iOS */
+}
+/* roboto-900 - latin_cyrillic */
+@font-face {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 900;
+  src: local("Roboto Black"), local("Roboto-Black"),
+    url("../fonts/roboto-v20-latin_cyrillic-900.woff2") format("woff2"),
+    /* Super Modern Browsers */
+      url("../fonts/roboto-v20-latin_cyrillic-900.woff") format("woff"),
+    /* Modern Browsers */ url("../fonts/roboto-v20-latin_cyrillic-900.ttf")
+      format("truetype"); /* Safari, Android, iOS */
+}
+/* raleway-700 - latin_cyrillic */
+@font-face {
+  font-family: "Raleway";
+  font-style: normal;
+  font-weight: 700;
+  src: local(""),
+    url("../fonts/raleway-v17-latin_cyrillic-700.woff2") format("woff2"),
+    /* Super Modern Browsers */
+      url("../fonts/raleway-v17-latin_cyrillic-700.woff") format("woff"),
+    /* Modern Browsers */ url("../fonts/raleway-v17-latin_cyrillic-700.ttf")
+      format("truetype"); /* Safari, Android, iOS */
+}
+
+/*  Палитра цветов  */
+:root {
+  --primary-white-color: #ffffff;
+  --primary-text-color: #212121;
+  --secondary-text-color: #757575;
+  --accent-color: #2196f3;
+}
+
+body {
+  width: 1600px;
+  font-family: "Roboto", sans-serif;
   letter-spacing: 0.03em;
-}
-
-.logo-main {
-  color: #000000;
-}
-
-.logo-web {
-  color: #2196f3;
-}
-
-.logo-footer {
-  color: #ffffff;
+  color: var(--primary-text-color);
+  background-color: var(--primary-white-color);
 }
 
 .header {
   display: flex;
   align-items: center;
-  background: #ffffff;
+  margin: 0;
+  padding-right: 214px;
+  padding-left: 214px;
+  border: 1px solid #000000;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+/* Логотип */
+.logotype {
+  font-family: "Raleway", serif;
+  font-weight: 700;
+  font-size: 26px;
+  line-height: 1.2;
+}
+.logo-web {
+  color: var(--accent-color);
+}
+.logotype.second {
+  color: var(--primary-white-color);
+}
+/* Списки, ссылки */
+.list {
+  list-style: none;
+}
+.link {
+  text-decoration: none;
+}
+/* Хедер - Футер */
+.site-nav {
+  display: flex;
+  margin-top: 0;
+  margin-bottom: 0;
+  margin-left: 93px;
+  padding-left: 0;
+}
+.site-nav li {
+  padding-top: 32px;
+  padding-bottom: 32px;
+}
+.site-nav li:not(:last-child) {
+  margin-right: 50px;
+}
+.site-nav,
+.nav-contacts > li {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.14;
+  letter-spacing: 0.02em;
+}
+.nav.link:hover,
+.nav.link:focus {
+  color: var(--accent-color);
+}
+.site-nav .link.current {
+  color: var(--accent-color);
+}
+.nav-contacts {
+  display: flex;
+  padding-left: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+  margin-left: 331px;
+  padding-left: 0;
+}
+.nav-contacts li {
+  padding-top: 32px;
+  padding-bottom: 32px;
+}
+.nav-contacts li:not(:first-child) {
+  margin-left: 50px;
+}
+.contacts.link {
+  color: var(--secondary-text-color);
+}
+.contacts.link:hover,
+.contacts.link:focus {
+  color: var(--accent-color);
+}
+.footer.contacts,
+.address-block,
+.features-text {
+  font-size: 14px;
+  line-height: 1.7;
+}
+.footer.contacts {
+  color: rgba(255, 255, 255, 0.6);
+}
+.address-block {
+  font-style: normal;
+  color: var(--primary-white-color);
+}
+.footer {
+  background: #2f303a;
+}
+/* Герой */
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #2f303a;
+}
+.hero-title {
+  font-weight: 900;
+  font-size: 44px;
+  line-height: 1.36;
+  text-align: center;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--primary-white-color);
+}
+.button {
+  margin-bottom: 198px;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.9;
+  text-align: center;
+  letter-spacing: 0.06em;
+  color: var(--primary-white-color);
+  background: var(--accent-color);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+}
+.button:hover,
+.button:focus {
+  background: #188ce8;
+}
+/* Особенности */
+.features-title {
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.14;
+  text-transform: uppercase;
 }
 
-.article-header {
-  display: none;
+.secondary-text {
+  color: var(--secondary-text-color);
+}
+.section-title {
+  text-align: center;
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 1.17;
+}
+.team-header {
+  font-weight: 500;
+}
+.team-header,
+.team-skill {
+  font-size: 16px;
+  line-height: 1.19;
+}
+
+/* Портфолио */
+
+.filters {
+  display: flex;
+}
+
+.filter-item {
+  padding: 6px 22px;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.6;
+  background: #f5f4fa;
+  border-radius: 4px;
+  border-style: none;
+}
+.filters li:not(:first-child) {
+  margin-left: 8px;
+}
+.filter-item:hover,
+.filter-item:focus {
+  color: var(--primary-white-color);
+  background: var(--accent-color);
+}
+.projects-header {
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 2;
+  letter-spacing: 0.06em;
 }
